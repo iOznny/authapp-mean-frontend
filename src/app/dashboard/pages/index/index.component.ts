@@ -1,16 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
-  styles: [
-  ]
+  styles: [`
+    * {
+      margin: 15px;
+    }
+  `]
 })
-export class IndexComponent implements OnInit {
+export class IndexComponent {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {
+  public logout() {
+    this.router.navigateByUrl('/auth');
   }
-
+ 
 }
